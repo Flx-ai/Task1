@@ -31,7 +31,7 @@ public class Main {
 
     static double calcRadius(double c) {
         double r = c/2;
-        System.out.printf("Радиус окружности равен = %1$.2f%n ", r);
+        System.out.printf("Радиус окружности = %1$.2f%n ", r);
         return r;
     }
 
