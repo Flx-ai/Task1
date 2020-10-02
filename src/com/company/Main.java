@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void main(String[] args) {
 
         double cat1 = readValue();
@@ -11,7 +10,6 @@ public class Main {
 
         logic(cat1,cat2);
     }
-
 
     static double readValue() {
         Scanner num = new Scanner(System.in);
@@ -41,7 +39,6 @@ public class Main {
         double s1 = Math.PI * r * r;
         System.out.printf("Для круга R = %1$.2f площадь s = %2$.2f%n", r, s1);
         return s1;
-
     }
 
     static double calcSideSquare(double r) {
