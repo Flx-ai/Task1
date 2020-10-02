@@ -25,46 +25,46 @@ public class Main {
 
     static double calcHypot(double cat1, double cat2) {
         double c = Math.sqrt(cat1 * cat1 + cat2 * cat2);
-        System.out.printf("Длина гипотенузы = %1$.2f ", c);
+        System.out.printf("Длина гипотенузы = %1$.2f%n ", c);
         return c;
     }
 
     static double calcRadius(double c) {
         double r = c/2;
-        System.out.printf("Радиус окружности равен = %1$.2f ", r);
+        System.out.printf("Радиус окружности равен = %1$.2f%n ", r);
         return r;
     }
 
     static double calcAreaCircle(double r) {
-        double s1 = Math.PI * r * r;
-        System.out.printf("Для круга R = %1$.2f площадь s = %2$.2f%n", r, s1);
-        return s1;
+        double area1 = Math.PI * r * r;
+        System.out.printf("Для круга R = %1$.2f площадь s = %2$.2f%n", r, area1);
+        return area1;
     }
 
-    static double calcSideSquare(double r) {
+    static double calcSide(double r) {
         double side = 2 * r;
         System.out.printf("Сторона квдрата = %1$.2f\n", side);
         return side;
     }
 
     static double calcAreaSquare(double side) {
-        double s2 = side * side;
-        System.out.printf("Площадь квдрата = %1$.2f%n", s2);
-        return s2;
+        double area2 = side * side;
+        System.out.printf("Площадь квдрата = %1$.2f%n", area2);
+        return area2;
     }
 
-    static double areaPaintedPart(double s1, double s2) {
-        double diffAreas = s2-s1;
-        System.out.printf("Плоащдь закрашенной части = %1$.2f", diffAreas);
+    static double areaPaintedPart(double area1, double area2) {
+        double diffAreas = area2-area1;
+        System.out.printf("Площадь закрашенной части = %1$.2f", diffAreas);
         return diffAreas;
     }
 
     static void logic(double cat1,double cat2){
         double c = calcHypot(cat1, cat2);
         double r = calcRadius(c);
-        double s1 = calcAreaCircle(r);
-        double side = calcSideSquare(r);
-        double s2 = calcAreaSquare(side);
-        double diffAreas = areaPaintedPart(s1, s2);
+        double area1 = calcAreaCircle(r);
+        double side = calcSide(r);
+        double area2 = calcAreaSquare(side);
+        double diffAreas = areaPaintedPart(area1, area2);
     }
 }
