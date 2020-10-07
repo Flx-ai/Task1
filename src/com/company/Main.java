@@ -1,4 +1,4 @@
-package com.company;
+package vsu.cs.ru.num15;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +8,7 @@ public class Main {
         double cat1 = readValue();
         double cat2 = calcCat2(cat1);
 
-        logic(cat1,cat2);
+        followLogic(cat1,cat2);
     }
 
     static double readValue() {
@@ -19,52 +19,47 @@ public class Main {
 
     static double calcCat2(double cat1) {
         double cat2 = cat1;
-        System.out.printf(" Длина второго катета = %1$.2f%n", cat2);
         return cat2;
     }
 
     static double calcHypot(double cat1, double cat2) {
-        double c = Math.sqrt(cat1 * cat1 + cat2 * cat2);
-        System.out.printf("Длина гипотенузы = %1$.2f%n ", c);
-        return c;
+        double hypot = Math.sqrt(cat1 * cat1 + cat2 * cat2);
+        return hypot;
     }
 
-    static double calcRadius(double c) {
-        double r = c/2;
-        System.out.printf("Радиус окружности = %1$.2f%n ", r);
-        return r;
+    static double calcRadius(double hypot) {
+        double radius = hypot/2;
+        return radius;
     }
 
-    static double calcAreaCircle(double r) {
-        double area1 = Math.PI * r * r;
-        System.out.printf("Для круга R = %1$.2f площадь s = %2$.2f%n", r, area1);
-        return area1;
+    static double calcAreaCircle(double radius) {
+        double areaCircle = Math.PI * radius * radius;
+        System.out.printf("Площадь круга = %1$.2f%n", areaCircle);
+        return areaCircle;
     }
 
-    static double calcSide(double r) {
-        double side = 2 * r;
-        System.out.printf("Сторона квдрата = %1$.2f\n", side);
-        return side;
+    static double calcSideSquare(double radius) {
+        double sideSquare = 2 * radius;
+        return sideSquare;
     }
 
-    static double calcAreaSquare(double side) {
-        double area2 = side * side;
-        System.out.printf("Площадь квдрата = %1$.2f%n", area2);
-        return area2;
+    static double calcAreaSquare(double sideSquare) {
+        double areaSquare = sideSquare * sideSquare;
+        return areaSquare;
     }
 
-    static double areaPaintedPart(double area1, double area2) {
-        double diffAreas = area2-area1;
+    static double calcAreaPaintedPart(double areaSquare, double areaCircle) {
+        double diffAreas = (areaSquare - areaCircle)/2;
         System.out.printf("Площадь закрашенной части = %1$.2f", diffAreas);
         return diffAreas;
     }
 
-    static void logic(double cat1,double cat2){
-        double c = calcHypot(cat1, cat2);
-        double r = calcRadius(c);
-        double area1 = calcAreaCircle(r);
-        double side = calcSide(r);
-        double area2 = calcAreaSquare(side);
-        double diffAreas = areaPaintedPart(area1, area2);
+    static void followLogic(double cat1,double cat2){
+        double hypot = calcHypot(cat1, cat2);
+        double radius = calcRadius(hypot);
+        double areaCircle = calcAreaCircle(radius);
+        double sideSquare = calcSideSquare(radius);
+        double areaSquare = calcAreaSquare(sideSquare);
+        double diffAreas = calcAreaPaintedPart(areaSquare, areaCircle);
     }
 }
